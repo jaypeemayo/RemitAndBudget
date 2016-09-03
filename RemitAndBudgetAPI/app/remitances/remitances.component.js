@@ -10,8 +10,15 @@
                 this.Amount;
                 this.Month;
                 this.Description;
-
-                $window.alert(this.Amount + this.Month + this.Description + YYY.Get());
+                var testReturn = YYY.Get().
+                then(
+                function successCallback(response) {
+                    $window.alert(response.data[0] + response.data[1]);
+                },
+                function errorCallback(response) {
+                    $window.alert('error');
+                });
+              
 
             }
         }]
