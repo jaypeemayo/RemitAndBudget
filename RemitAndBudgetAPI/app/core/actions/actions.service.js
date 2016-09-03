@@ -25,7 +25,7 @@ angular.
               return $http({ method: 'GET', url: '/api/RemitAndBudget' }).
               then(
                 function successCallback(response) {
-
+                    //test
                 },
                 function errorCallback(response) {
 
