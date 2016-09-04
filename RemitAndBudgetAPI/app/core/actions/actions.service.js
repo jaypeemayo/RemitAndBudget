@@ -28,6 +28,17 @@ angular.
     }
   ])
 
+
+//var req = {
+//    method: 'POST',
+//    url: 'http://example.com',
+//    headers: {
+//        'Content-Type': undefined
+//    },
+//    data: { test: 'test' }
+//}
+
+//$http(req).then(function(){...}, function(){...});
 angular.
   module('core.actions').
   factory('YYY', ['$http', function ($http) {
@@ -37,7 +48,12 @@ angular.
           Get: function () {
               //return $http.get('/api/RemitAndBudget').success(function(){data}).error(function(){})
               return $http({ method: 'GET', url: '/api/RemitAndBudget' });
+          },
+
+          Post: function (actionInfo) {
+              return $http.post('/api/RemitAndBudget', actionInfo);
           }
+
       }
-    }
-  ]);
+  }
+]);

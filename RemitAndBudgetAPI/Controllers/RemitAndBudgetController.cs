@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RemitAndBudgetAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,23 +8,38 @@ using System.Web.Http;
 
 namespace RemitAndBudgetAPI.Controllers
 {
+   
     public class RemitAndBudgetController : ApiController
     {
-        // GET: api/RemitAndBudget
-        public IEnumerable<string> Get()
+        static List<TransactionInfo> transactionInfo = new List<TransactionInfo>();
+        public RemitAndBudgetController()
         {
-            return new string[] { "value1", "value2" };
+        
+
+        }
+        // GET: api/RemitAndBudget
+        public IEnumerable<TransactionInfo> Get()
+        {
+            return transactionInfo;
+        }
+        
+        // GET: api/RemitAndBudget/5
+        public TransactionInfo Get(int id)
+        {
+            return transactionInfo.Where(o=>o.Id == id).FirstOrDefault();
         }
 
-        // GET: api/RemitAndBudget/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //// POST: api/RemitAndBudget
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
         // POST: api/RemitAndBudget
-        public void Post([FromBody]string value)
+
+        
+        public void Post(TransactionInfo value)
         {
+            transactionInfo.Add(value);
         }
 
         // PUT: api/RemitAndBudget/5
@@ -36,4 +52,6 @@ namespace RemitAndBudgetAPI.Controllers
         {
         }
     }
+
+   
 }
