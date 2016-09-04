@@ -26,7 +26,7 @@ namespace RemitAndBudgetAPI.Controllers
         // GET: api/RemitAndBudget/5
         public TransactionInfo Get(int id)
         {
-            return transactionInfo.Where(o=>o.Id == id).FirstOrDefault();
+            return transactionInfo.Where(o=>o.TransactionInfoId == id).FirstOrDefault();
         }
 
         //// POST: api/RemitAndBudget
