@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace RemitAndBudgetAPI.Models
         public string Description { get; set; }
         public string Action { get; set; }
         public int UserInfoId { get; set; }
+        [JsonIgnore]
         public virtual UserInfo UserInfo { get; set; }
     }
 }

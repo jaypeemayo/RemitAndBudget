@@ -29,7 +29,9 @@
                 var transactionInfo = {
                     'Amount': this.Amount,
                     'Month': this.Month,
-                    'Description': this.Description
+                    'Description': this.Description,
+                    'Action': this.Action,
+                    'UserInfoId': 1
                 }
                 var testReturn = YYY.Post(transactionInfo).
                 then(

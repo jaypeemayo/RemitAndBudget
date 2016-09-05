@@ -43,15 +43,15 @@ angular.
   module('core.actions').
   factory('YYY', ['$http', function ($http) {
 
-
+       
       return {
           Get: function () {
               //return $http.get('/api/RemitAndBudget').success(function(){data}).error(function(){})
-              return $http({ method: 'GET', url: '/api/RemitAndBudget' });
+              return $http({ method: 'GET', url: '/api/TransactionInfoes' });
           },
 
           Post: function (actionInfo) {
-              return $http.post('/api/RemitAndBudget', actionInfo);
+              return $http.post('/api/TransactionInfoes', actionInfo);
           }
 
       }
