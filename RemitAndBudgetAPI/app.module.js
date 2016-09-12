@@ -1,2 +1,7 @@
 ﻿angular.module('remitAndBudgetApp',
-    ['ngRoute', 'core', 'home', 'remitances', 'expenses']);
+    ['ngRoute', 'core', 'home', 'remitances', 'expenses', 'login']);
+
+
+
+
+

@@ -1,1 +1,1 @@
-﻿angular.module('remitances', ['ngRoute','core.actions']);
+﻿angular.module('remitances', ['ngRoute', 'core.actions']);

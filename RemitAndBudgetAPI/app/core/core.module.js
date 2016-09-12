@@ -1,1 +1,1 @@
-﻿angular.module('core', ['core.actions'])
+﻿angular.module('core', ['core.actions', 'core.authenticationService']);

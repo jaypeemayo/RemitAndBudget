@@ -2,7 +2,7 @@
     module('remitances').
     component('remitances', {
         templateUrl: 'app/remitances/remitances.template.html',
-        controller: ['$routeParams', '$window', 'XXX', 'YYY', function RemitancesController($routeParams, $window, XXX, YYY) {
+        controller: ['$routeParams', '$window', 'XXX', 'actionService', function RemitancesController($routeParams, $window, XXX, actionService) {
 
             this.RemitancesId = $routeParams.remitancesId;
             this.GetRemitance = function () {
@@ -10,22 +10,17 @@
                 this.Amount;
                 this.Month;
                 this.Description;
-                var testReturn = YYY.Get().
+                var testReturn = actionService.Get().
                 then(
                 function successCallback(response) {
                     $window.alert(response.data[0] + response.data[1]);
                 },
                 function errorCallback(response) {
-                    $window.alert('error');
+                    $window.alert(response.statusText);
                 });
-              
-
             }
 
             this.AddTransaction = function () {
-
-               
-
                 var transactionInfo = {
                     'Amount': this.Amount,
                     'Month': this.Month,
@@ -33,16 +28,15 @@
                     'Action': this.Action,
                     'UserInfoId': 1
                 }
-                var testReturn = YYY.Post(transactionInfo).
+                var testReturn = actionService.Post(transactionInfo).
                 then(
-                function successCallback(response) {
-                    $window.alert(response.data[0] + response.data[1]);
+                function (response) {
+                    $window.alert("New transaction has successfully added.");
                 },
-                function errorCallback(response) {
-                    $window.alert('error');
+                function (response) {
+                    $window.alert(response.statusText);
+                    $location.path('/login');
                 });
-
-
             }
         }]
     });

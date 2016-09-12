@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="remitAndBudgetApp">
+<html ng-app="remitAndBudgetApp" >
 <head>
     <title></title>
 	<meta charset="utf-8" />
@@ -11,24 +11,34 @@
     <script src="Scripts/angular-resource.js"></script>
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
+    <script src="app.controller.js"></script>
     <script src="app/core/core.module.js"></script>
     <script src="app/core/actions/actions.module.js"></script>
     <script src="app/core/actions/actions.service.js"></script>
+    <script src="app/core/authentication/authentication.module.js"></script>
+    <script src="app/core/authentication/authentication.service.js"></script>
     <script src="app/home/home.module.js"></script>
     <script src="app/home/home.component.js"></script>
     <script src="app/remitances/remitances.module.js"></script>
     <script src="app/remitances/remitances.component.js"></script>
     <script src="app/expenses/expenses.module.js"></script>
     <script src="app/expenses/expenses.component.js"></script>
+    <script src="app/login/login.module.js"></script>
+    <script src="app/login/login.component.js"></script>
 
 </head>
 <body class="container-fluid">
-    <div class="jumbotron"><h4>Remit And Budget</h4></div>
-    <nav class="navbar col-lg-6 col-lg-offset-4">
+    <div class="jumbotron">
+        <h4>Remit And Budget</h4>
+       
+    </div>
+    <nav  class="navbar col-lg-6 col-lg-offset-4">
         <a class="navbar-text" href="#!/home">Home</a>
         <a class="navbar-text" href="#!/remitances/remitances">Remitances</a>
         <a class="navbar-text" href="#!/expenses/expensesId">Expenses</a>
         <a class="navbar-text" href="">About</a>
+        <button onclick="window.location.href='#!/login'">Login</button>
+        <button ng-controller="remitAndBudgetAppController as indexController"  ng-click="indexController.Logout()">Logout</button>
     </nav>
    <ng-view></ng-view>
 </body>

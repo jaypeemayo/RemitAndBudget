@@ -15,19 +15,26 @@
             <th>
                 Date
             </th>
+            <th>
+                Manok
+            </th>
         </tr>
         <tr ng-repeat="transaction in $ctrl.Transactions">
+
             <td>
-                {{transaction.Action}}
+                {{transaction.action}}
             </td>
             <td>
-                {{transaction.Amount}}
+                {{transaction.amount}}
             </td>
             <td>
-                {{transaction.Description}}
+                {{transaction.description}}
             </td>
             <td>
-                {{transaction.Month}}
+                {{transaction.month}}
+            </td>
+            <td>
+               MANOKS
             </td>
         </tr>
     </table>

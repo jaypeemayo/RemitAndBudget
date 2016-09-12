@@ -17,6 +17,7 @@ namespace RemitAndBudgetAPI.Controllers
         
 
         }
+        [AllowAnonymous]
         // GET: api/RemitAndBudget
         public IEnumerable<TransactionInfo> Get()
         {
@@ -36,7 +37,7 @@ namespace RemitAndBudgetAPI.Controllers
 
         // POST: api/RemitAndBudget
 
-        
+        [AllowAnonymous]
         public void Post(TransactionInfo value)
         {
             transactionInfo.Add(value);

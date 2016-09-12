@@ -41,19 +41,39 @@ angular.
 //$http(req).then(function(){...}, function(){...});
 angular.
   module('core.actions').
-  factory('YYY', ['$http', function ($http) {
-
+  factory('actionService', ['$http', '$q', function ($http, $q) {
+      
+      function composeHeader() {
+          var sessionToken = sessionStorage.getItem('tokenKey');
+          return {
+              'Accept': "application/json",
+              'Content-Type': "application/json",
+              'Authorization': "Bearer " + sessionToken
+          };
+      }
        
       return {
+
+
           Get: function () {
-              //return $http.get('/api/RemitAndBudget').success(function(){data}).error(function(){})
-              return $http({ method: 'GET', url: '/api/TransactionInfoes' });
+              return $http({
+                  method: 'GET',
+                  url: '/api/TransactionInfoes',
+                  headers: composeHeader()
+              }).then(function (response) {
+                  return response.data;
+              });
           },
 
           Post: function (actionInfo) {
-              return $http.post('/api/TransactionInfoes', actionInfo);
+              return $http({
+                  method: 'POST',
+                  url: '/api/TransactionInfoes',
+                  data: actionInfo,
+                  headers: composeHeader()
+              });
+              //return $http.post('/api/TransactionInfoes', actionInfo, header);
           }
-
       }
   }
 ]);

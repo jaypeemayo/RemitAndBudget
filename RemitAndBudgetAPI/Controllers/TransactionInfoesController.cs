@@ -12,10 +12,11 @@ using RemitAndBudgetAPI.Models;
 
 namespace RemitAndBudgetAPI.Controllers
 {
+    [Authorize]
     public class TransactionInfoesController : ApiController
     {
         private RemitAndBudgetAPIContext db = new RemitAndBudgetAPIContext();
-
+       [Authorize]
         // GET: api/TransactionInfoes
         public IQueryable<TransactionInfo> GetTransactionInfoes()
         {

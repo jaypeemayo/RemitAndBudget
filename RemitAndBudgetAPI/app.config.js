@@ -17,6 +17,9 @@ config(['$locationProvider', '$routeProvider',
           when('/expenses/:expensesId', {
               template: '<expenses></expenses>'
           }).
+          when('/login', {
+              template: '<login></login>'
+          }).
           otherwise('/home', {
               template: '<home></home>'
           });
